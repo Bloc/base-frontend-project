@@ -6,6 +6,7 @@ var port = process.env.PORT || 3000;
 app.get('/js/:file', serveFile.bind(null, 'dist/js'));
 app.get('/css/:file', serveFile.bind(null, 'dist/css'));
 app.get('/img/:file', serveFile.bind(null, 'dist/img'));
+app.get('/templates/:file', serveFile.bind(null, 'dist/templates'));
 
 // Anything else is sent to index.html to support SPA routing
 app.get('/*', function (req, res) {

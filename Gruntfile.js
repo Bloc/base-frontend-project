@@ -46,9 +46,14 @@ module.exports = function(grunt) {
                     cwd: './app/assets/'
                 }, {
                     expand: true,
-                    src: ['./**/*.html' ],
+                    src: [ './**/*.html' ],
                     dest: './dist',
                     cwd: './app/pages/'
+                }, {
+                    expand: true,
+                    src: [ './**/*.html' ],
+                    dest: './dist/templates',
+                    cwd: './app/templates'
                 }]
             }
         },
@@ -60,6 +65,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
 };
