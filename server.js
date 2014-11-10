@@ -1,25 +1,43 @@
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 3000;
+var Hapi = require('hapi'),
+    path = require('path'),
+    port = process.env.PORT || 3000,
+    server = new Hapi.Server(port),
+    routes = {
+        css: {
+            method: 'GET',
+            path: '/css/{path*}',
+            handler: createDirectoryRoute('css')
+        },
+        js: {
+            method: 'GET',
+            path: '/js/{path*}',
+            handler: createDirectoryRoute('js')
+        },
+        templates: {
+            method: 'GET',
+            path: '/templates/{path*}',
+            handler: createDirectoryRoute('templates')
+        },
+        spa: {
+            method: 'GET',
+            path: '/{path*}',
+            handler: {
+                file: path.join(__dirname, '/dist/index.html')
+            }
+        }
+    };
 
-// Asset paths first
-app.get('/js/:file', serveFile.bind(null, 'dist/js'));
-app.get('/css/:file', serveFile.bind(null, 'dist/css'));
-app.get('/img/:file', serveFile.bind(null, 'dist/img'));
-app.get('/templates/:file', serveFile.bind(null, 'dist/templates'));
+server.route([ routes.css, routes.js, routes.templates, routes.spa ]);
+server.start( onServerStarted );
 
-// Anything else is sent to index.html to support SPA routing
-app.get('/*', function (req, res) {
-    res.sendFile('index.html', { root: 'dist' });
-});
-
-// Start the server!
-var server = app.listen(port, serverStarted);
-
-function serverStarted() {
-    console.log("Bloc Base Project is running");
+function onServerStarted() {
+    console.log( 'Server running on port ', port );
 }
 
-function serveFile( root, req, res ) {
-    res.sendFile(req.params.file, { root: root });
+function createDirectoryRoute( directory ) {
+    return {
+        directory: {
+            path: path.join(__dirname, '/dist/', directory)
+        }
+    };
 }
