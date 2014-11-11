@@ -1,7 +1,7 @@
 {
-  "name": "bloc-base-project",
+  "name": "base-frontend-project",
   "version": "0.0.1",
-  "description": "Bloc Base Project",
+  "description": "Base skeleton project for a single page application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
