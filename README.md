@@ -1,7 +1,7 @@
 Bloc Base Project
 =================
 
-A base project for frontend projects.
+A base for Bloc frontend projects.
 
 ## Configuration
 
@@ -13,13 +13,13 @@ Start by cloning the repository
 $ git clone https://github.com/joelip/base-frontend-project.git <your-frontend-project-name>
 ```
 
-Install the required plugins. The project uses Grunt to run tasks (detailed below); start by installing the Grunt Command Line Interface (`grunt-cli`) globally on your machine.
+The project uses Grunt to run tasks (detailed below); start by installing the Grunt Command Line Interface (`grunt-cli`) globally on your machine.
 
 ```
 $ npm install -g grunt-cli
 ```
 
-Once that's installed, install the remaining project dependencies by running
+Once that's complete, install the remaining project dependencies by running
 
 ```
 $ npm install
@@ -37,7 +37,7 @@ Run the application using
 $ grunt
 ```
 
-The application runs on port 3000 (configured in the [`Gruntfile.js`](https://github.com/joelip/base-frontend-project/blob/master/server.js)). To change the port, change the number highlighted below
+The application runs on port 3000 (configured in the [`Gruntfile.js`](https://github.com/joelip/base-frontend-project/blob/master/server.js)). To change the port, modify the number highlighted below
 
 ```js
 connect: {
@@ -69,7 +69,7 @@ app/
  |   |__home.html
 ```
 
-Grunt looks for files in a certain pattern so that it knows what to compile and copy and where to put it. To edit the files that Grunt watches, look at the array of files in the `watch` task in `Gruntfile.js`. The default watched files are
+Grunt looks for files using a defined pattern so that it knows what to compile and copy and where to put it. To edit the files that Grunt watches, look at the array of files in the `watch` task in `Gruntfile.js`. The default watched files are
 
 ```js
   files: [ 
@@ -92,6 +92,12 @@ Make sure that all of your Sass files are included in the `sass` directory. When
 ```
 
 and it will be automatically populated in the compiled CSS file when you save any Sass file.
+
+### Difference between Pages and Templates
+
+The `pages` directory is where you should keep application layouts. That is, these are full pages where you'll put a base HTML structure that might hold a `ui-view` or another dynamic set of HTML based on differing routes, app states, etc.
+
+Templates are partials, or smaller sets of HTML that will be populated into the pages. The distinction is similar to the differene between `index.html` and the HTML files in the `templates` directory in Bloc Jams.
 
 
 ## Grunt plugins
