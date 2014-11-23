@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 
-	grunt.registerTask( 'default', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy' ] );
-	
-	grunt.initConfig({
+    grunt.registerTask( 'default', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy', 'connect', 'watch'] );
+    
+    grunt.initConfig({
         browserify: {
             dist: {
                 files: {
@@ -32,7 +32,13 @@ module.exports = function(grunt) {
 
         watch: {
             dist: {
-                files: [ './app/scripts/**/*.js', './app/sass/**/*.scss', './app/pages/**/*.html', './app/templates/**/*.html' ],
+                files: [ 
+                    './app/scripts/**/*.js', 
+                    './app/sass/**/*.scss', 
+                    './app/pages/**/*.html', 
+                    './app/templates/**/*.html', 
+                    'Gruntfile.js'
+                ],
                 tasks: [ 'default' ]
             }
         },
@@ -58,13 +64,25 @@ module.exports = function(grunt) {
             }
         },
 
+        connect: {
+          server: {
+            options: {
+              port: 3000,
+              hostname: 'localhost',
+              base: './dist',
+              useAvailablePort: true
+            }
+          }
+        },
+
         clean: ['./dist']
-	});
+    });
 
     grunt.loadNpmTasks('grunt-browserify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
 };
