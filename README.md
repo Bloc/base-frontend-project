@@ -53,8 +53,6 @@ connect: {
 }
 ```
 
-__TODO: Test this in Nitrous to make sure that Watch works properly__
-
 ## Directory structure and Grunt
 
 ```
