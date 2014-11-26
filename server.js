@@ -46,3 +46,5 @@ function createDirectoryRoute( directory ) {
         }
     };
 }
+
+module.exports = server;

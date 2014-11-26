@@ -72,11 +72,11 @@ app/
 Grunt looks for files using a defined pattern so that it knows what to compile and copy and where to put it. To edit the files that Grunt watches, look at the array of files in the `watch` task in `Gruntfile.js`. The default watched files are
 
 ```js
-  files: [ 
-      './app/scripts/**/*.js', 
-      './app/sass/**/*.scss', 
-      './app/pages/**/*.html', 
-      './app/templates/**/*.html', 
+  files: [
+      './app/scripts/**/*.js',
+      './app/sass/**/*.scss',
+      './app/pages/**/*.html',
+      './app/templates/**/*.html',
       'Gruntfile.js'
   ]
 ```
@@ -95,7 +95,7 @@ and it will be automatically populated in the compiled CSS file when you save an
 
 ### Difference between Pages and Templates
 
-The `pages` directory is where you should keep application layouts. That is, these are full pages where you'll put a base HTML structure that might hold a `ui-view` or another dynamic set of HTML based on differing routes, app states, etc.
+The `pages` directory is where you should keep application layouts. That is, these are full pages where you'll put a base HTML structure that might hold a `ui-view` or another dynamic block of HTML based on differing routes, app states, etc.
 
 Templates are partials, or smaller sets of HTML that will be populated into the pages. The distinction is similar to the differene between `index.html` and the HTML files in the `templates` directory in Bloc Jams.
 
@@ -128,6 +128,6 @@ A list of the plugins used by Grunt and what they're used for.
 
 [Grunt clean](https://github.com/gruntjs/grunt-contrib-clean) "cleans" or removes all files in your destination folder (the folder where you'll put your officially served content for your application) so that logic in your stylesheets, templates or scripts isn't accidentally overridden by previous code in the directory.
 
-#### Connect
+#### Hapi
 
-[Grunt Connect](https://github.com/gruntjs/grunt-contrib-connect) is simply a server, but is useful in the context of Grunt because it allows for integration of other Grunt tasks while the content is being served.
+[Grunt Hapi](https://github.com/athieriot/grunt-hapi) is a task that runs a server using [`HapiJS`](http://hapijs.com/). Happy is a Node Web Application framework with robust configuration options. Using Hapi allows us to use Angular for our application routing instead of relying on a backend to handle template requests.
