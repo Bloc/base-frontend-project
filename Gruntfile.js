@@ -43,7 +43,13 @@ module.exports = function(grunt) {
                     './app/templates/**/*.html',
                     'Gruntfile.js'
                 ],
-                tasks: [ 'hapi' ],
+                tasks: [
+                    'clean',
+                    'browserify',
+                    'sass',
+                    'autoprefixer',
+                    'copy'
+                ],
                 options: {
                     spawn: false
                 }
