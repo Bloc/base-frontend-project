@@ -2,9 +2,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask( 'default', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy', 'hapi', 'watch'] );
 
-    grunt.registerTask('build', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy' ] );
+    grunt.registerTask( 'build', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy' ] );
 
-    grunt.registerTask('run', [ 'hapi', 'watch' ]);
+    grunt.registerTask( 'run', [ 'hapi', 'watch' ]);
 
     grunt.initConfig({
         browserify: {
