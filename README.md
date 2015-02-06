@@ -10,7 +10,7 @@ Configuring this project should be consistent across Nitrous, Mac (local), and V
 Start by cloning the repository
 
 ```
-$ git clone https://github.com/joelip/base-frontend-project.git <your-frontend-project-name>
+$ git clone https://github.com/Bloc/base-frontend-project.git <your-frontend-project-name>
 ```
 
 The project uses Grunt to run tasks (detailed below); start by installing the Grunt Command Line Interface (`grunt-cli`) globally on your machine.
