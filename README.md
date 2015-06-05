@@ -73,6 +73,7 @@ Grunt looks for files using a defined pattern so that it knows what to compile a
 
 ```js
   files: [
+      './app/images/*.{png,jpg,jpeg}',
       './app/scripts/**/*.js',
       './app/sass/**/*.scss',
       './app/pages/**/*.html',
@@ -83,9 +84,17 @@ Grunt looks for files using a defined pattern so that it knows what to compile a
 
 Add any files or directories to Grunt's watch task using the [Grunt conventions for performing file operations](http://gruntjs.com/configuring-tasks#files).
 
+### Images
+
+Add images to the `app/images` directory. To reference images in the HTML, use the path `images/<image file name>.jpg`. For example, if there were an image called `bloc-white-logo.png`, the path for the `src` attribute in the HTML would be:
+
+```html 
+<img src="/images/bloc-white-logo.png">
+```
+
 ### Sass
 
-Make sure that all of your Sass files are included in the `sass` directory. When you create new Sass files in addition to `styles.scss`, make sure that you include them in `styles.scss` with an `@import` statement. For example, if you create a `home.scss` file to match our `home.html` template, include it in `styles.scss` with
+All Sass files must be included in the `sass` directory. When you create new Sass files in addition to `styles.scss`, make sure that you include them in `styles.scss` with an `@import` statement. For example, if you create a `home.scss` file to match our `home.html` template, include it in `styles.scss` with
 
 ```sass
 @import "home";
