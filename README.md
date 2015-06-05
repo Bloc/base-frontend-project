@@ -57,8 +57,6 @@ connect: {
 
 ```
 app/
- |__images/
- |
  |__pages/
  |   |__index.html
  |__sass/
