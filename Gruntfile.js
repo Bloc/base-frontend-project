@@ -37,6 +37,7 @@ module.exports = function(grunt) {
         watch: {
             hapi: {
                 files: [
+                    './app/images/*.{png,jpg,jpeg}'
                     './app/scripts/**/*.js',
                     './app/sass/**/*.scss',
                     './app/pages/**/*.html',
@@ -60,14 +61,14 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    src: [ './**/*.png', './**/*.jpg' ],
+                    src: [ './images/*.{png,jpg,jpeg}' ],
                     dest: './dist/images',
-                    cwd: './app/assets/'
+                    cwd: './app'
                 }, {
                     expand: true,
                     src: [ './**/*.html' ],
                     dest: './dist',
-                    cwd: './app/pages/'
+                    cwd: './app/pages'
                 }, {
                     expand: true,
                     src: [ './**/*.html' ],
