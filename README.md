@@ -58,7 +58,7 @@ connect: {
 ```
 app/
  |__images/
- |
+ |   |__bloc-image-white.png
  |__pages/
  |   |__index.html
  |__sass/
@@ -86,10 +86,16 @@ Add any files or directories to Grunt's watch task using the [Grunt conventions 
 
 ### Images
 
-Add images to the `app/images` directory. To reference images in the HTML, use the path `images/<image file name>.jpg`. For example, if there were an image called `bloc-white-logo.png`, the path for the `src` attribute in the HTML would be:
+Add images to the `app/images` directory. To reference images in HTML, use the path `images/<image file name>.jpg`. For example, to include the image called `bloc-white-logo.png`, the path for the `src` attribute in the HTML would be:
 
 ```html 
 <img src="/images/bloc-white-logo.png">
+```
+
+__Note:__ A sample image has been added to `app/images`. To remove the image from the application, run the following command from the root of repo:
+
+```bash
+$ rm -f app/images/bloc-white-logo.png
 ```
 
 ### Sass
@@ -115,7 +121,7 @@ A list of the plugins used by Grunt and what they're used for.
 
 #### Browserify
 
-[Browserify](http://browserify.org/) allows you to access Node modules included a given JS file while in the browser.
+[Browserify](http://browserify.org/) enables the use of Node's [`require()`](https://nodejs.org/api/all.html#all_require) syntax in browser files.
 
 #### Sass
 
@@ -127,7 +133,7 @@ A list of the plugins used by Grunt and what they're used for.
 
 #### Watch
 
-[Grunt watch](https://github.com/gruntjs/grunt-contrib-watch) watches an array of files for changes and then executes Grunt tasks when a change is detected. Watch is useful for tasks like continuous unit testing (every time you save a file, that new file is tested), refreshing your browser automatically when changes are reflected, or compiling preprocessing languages like Sass or Jade into CSS or HTML.
+[Grunt watch](https://github.com/gruntjs/grunt-contrib-watch) watches for changes to file content and then executes Grunt tasks when a change is detected. Watch is useful for tasks like continuous unit testing (every time you save a file, that new file is tested), refreshing your browser automatically when changes are reflected, or compiling preprocessing languages like Sass or Jade into CSS or HTML.
 
 #### Copy
 
