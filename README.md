@@ -88,7 +88,7 @@ Add any files or directories to Grunt's watch task using the [Grunt conventions 
 
 Add images to the `app/images` directory. To reference images in HTML, use the path `images/<image file name>.jpg`. For example, to include the image called `bloc-white-logo.png`, the path for the `src` attribute in the HTML would be:
 
-```html 
+```html
 <img src="/images/bloc-white-logo.png">
 ```
 
@@ -112,7 +112,7 @@ and it will be automatically populated in the compiled CSS file when you save an
 
 The `pages` directory is where you should keep application layouts. That is, these are full pages where you'll put a base HTML structure that might hold a `ui-view` or another dynamic block of HTML based on differing routes, app states, etc.
 
-Templates are partials, or smaller sets of HTML that will be populated into the pages. The distinction is similar to the differene between `index.html` and the HTML files in the `templates` directory in Bloc Jams.
+Templates are partials, or smaller sets of HTML that will be populated into the pages. The distinction is similar to the difference between `index.html` and the HTML files in the `templates` directory in Bloc Jams.
 
 
 ## Grunt plugins
